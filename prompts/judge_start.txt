@@ -1,0 +1,23 @@
+I am playing the game Minecraft. I have divided the items in the game into two categories, "collected items" and "synthetic items". Synthetic items refer to items that cannot be acquired directly from the environment without any crafting, processing, or transformation. Additionally, if an item requires the use of any crafted tools for its collection, such as pickaxes, axes, shovels, buckets, it should also be classified as a 'synthetic items'. This includes items obtained through mining, chopping, or any other activity that requires a tool crafted in the game. The other items are classified as collected items. Now I will give you a list of item names, please judge the category of each item one by one.
+
+Before you submit your answer, please make sure:
+1) Ensure the response can be pshowrsed by Python `json.loads`, e.g.: no trailing commas, no single quotes, etc.
+2) Output the answer according to the format of the following example.
+
+Here are some examples:
+
+INPUT:
+Item List: {"stone_pickaxe", "diamond", "iron_ingot", "cobblestone", "oak_log", "oak_planks"}
+
+RESPONSE:
+{
+    "stone_pickaxe": "synthetic items",
+    "diamond": "synthetic items",
+    "iron_ingot": "synthetic items",
+    "cobblestone": "synthetic items",
+    "oak_log": "collected items",
+    "oak_planks": "synthetic items"
+}
+
+REASON:
+To understand this output line by line: "stone_pickaxe" belongs to "synthetic items", because it needs to be crafted; "diamond" belongs to "synthetic items", because it is obtained by mining diamond_ore with a tool (e.g., iron_pickaxe); "iron_ingot" belongs to "synthetic items", because it is obtained by smelting raw_iron; "cobblestone" belongs to "synthetic items", because it is obtained by mining stone with a tool (e.g., wooden_pickaxe); "oak_log" belongs to "collected items", because it can be acquired directly from the environment without any crafting, processing, or transformation. Besides, "oak_log" can be obtained by cutting down oak trees, which can be done without tools; "oak_planks" belongs to "synthetic items", because it needs to be acquired by processing oak logs.

@@ -1,0 +1,37 @@
+I am playing the game Minecraft. I have categorized the tasks in the game into two types: mining tasks and crafting tasks. Mining tasks refer to collecting certain things from the game, where the collection process requires the use of tools such as axes and pickaxes, etc. For example, mining raw iron, mining diamonds, and so on; Crafting tasks refer to making things with the collected items, which can be done using a crafting table or furnace, or without any. For example, making wooden planks, making buckets, and so on.
+
+You are an assistant proficient in all the ways to obtain items and crafting recipes in the game Minecraft, and you are very good at following instructions. I want to acquire certain items in the game, and I have already prepared the necessary tools or materials. I will tell you what I want to obtain, as well as the items in my inventory. Please complete the following instructions in order and tell me the results in JSON format as described below:
+{
+    "My task": item_name
+    "Task category": "Mining" or "Crafting"
+    "Mining block": block_name or "None"
+    "Crafting tool": "crafting_table" or "furnace" or "no tool" or "None"
+    "Furnace info": {"raw materials": item_name, "need coal": "false" or "true"} or "None"
+}
+1) First, identify the item I want to acquire. You may need to make appropriate modifications based on my goals and the materials in my backpack to ensure it conforms to the naming conventions of items in Minecraft. If you modify the item name, please make sure that the modified target is the correct name of the corresponding item in Minecraft. For example, if I want to obtain planks, and I have oak_log in my inventory, you should modify the final task's item name from planks to oak_planks, because oak_planks is the correct item name in Minecraft, but planks is not. Record the result in "My task".
+2) Second, determine the type of task; you need to decide whether it is a mining task or a crafting task. Record the result in "Task category".
+3) Third, if the task is a mining task, please record the blocks that need to be mined, such as "iron_ore", "copper_ore", and so on. Please make sure the block name you provide is the correct block name in Minecraft. If the task is a crafting task, the result is "None".
+4) Fourth, if the task is a crafting task, please note down the crafting tool required, choose one from the "crafting_table", "furnace", or "no tool". For example, if the task is to make planks, then the result is "no tool"; if the task is to make a wooden axe, then the result is a "crafting_table"; if the task is a mining task, the result is "None".
+5) Fifth, if the task is a crafting task and the tool used is a furnace, please select the materials based on what I want to acquire and what's in my inventory. You also need to check whether coal is required: if it's already in the inventory, then the result at "need coal" is "false" not needed; otherwise, it is "true". You must ensure that the correct names of items in Minecraft are provided. Otherwise, the result is "None".
+
+Before you submit your answer, please make sure:
+1) Ensure the response can be pshowrsed by Python `json.loads`, e.g.: no trailing commas, no single quotes, etc.
+2) Output the answer according to the format of the following example.
+
+Here are some examples:
+
+INPUT:
+Final Task: Get 1 raw iron.
+Inventory (4/36): {"iron_ingot": 3, "stone_pickaxe": 3, "stick": 4, "bucket": 1}
+
+RESPONSE:
+{
+    "My task": "raw_iron"
+    "Task category": "Mining"
+    "Mining block": "iron_ore"
+    "Crafting tool": "None"
+    "Furnace info": "None"
+}
+
+REASON:
+To understand this output line by line: Based on the provided objectives, inventory, and item names in Minecraft, the item I am most likely to want to obtain is raw_iron. This is a mining task. The mining block is iron_ore, and we don't need crafting_table or furnace to mine a raw iron.

@@ -1,0 +1,52 @@
+I am playing the game Minecraft. You are a helpful assistant that familiar with the acquisition conditions or composition formulas for all items in Minecraft, and you are very good at following instructions to the letter. My final task is to get some items. Now I'll give you my task and my current inventory, you need to complete the following instructions in order and tell me the results in JSON format as described below:
+{
+    "Original final task": {item_name: item_num, ...},
+    "My Inventory": {item_name: item_num, ...},
+    "Updated final task": {item_name: item_num, ...},
+    "Items Needed": {item_name: item_num, ...},
+    "Items Missing": {item_name: item_num, ...}
+}
+1) First, record the name and quantity of item A in the final task. Record the result in "Original final task".
+2) Second, record the names and quantities of item list B in my inventory. Record the result in "My Inventory".
+3) Third, if some items in the final task are already in the inventory, update the task to reflect the remaining requirements. Remember to only update the final task based on items that are directly in the inventory. Don't consider possible conversions or crafting from the inventory items. Record the name, category, and actual required quantity in "Updated final task".
+4) Fourth, based on your knowledge, list out items immediately needed to complete the updated final task, excluding the crafting table and furnace. In this step, only list the immediate items (excepted crafting table and furnace) required to complete the task. Only once decomposition is allowed, this step doesn't involve further decomposition. For example, to mine raw iron, a pickaxe is required, just list the pickaxe without considering its crafting ingredients. Do not consider or adjust quantities based on the inventory – simply state what's immediately needed. Record the result in "Items Needed".
+5) Fifth, compare the "Items Needed" with the "My Inventory" to determine any items that are absent. This step doesn't involve further decomposition. For example, you may have the necessary materials to craft an item C in "Items Needed", but you haven't made it yet, so C is still missing. Record the result in "Items Missing".
+
+Before you submit your answer, please make sure:
+1) Ensure the response can be pshowrsed by Python `json.loads`, e.g.: no trailing commas, no single quotes, etc.
+2) Output the answer according to the format of the following example.
+3) Before submitting the final answer, please cross-check the "Items Needed" list against your knowledge of Minecraft crafting recipes and item acquisition methods. Ensure that the items listed are directly necessary for completing the task. Adjust the list if any discrepancies are found to provide the most accurate and relevant information for the specified task.
+
+Here are some examples:
+
+INPUT:
+Final Task: Get 3 raw_copper.
+Inventory (3/36): {"stone_pickaxe": 1, "diamond": 2, "raw_copper": 2}
+
+RESPONSE:
+{
+    "Original final task": {"raw_copper": 3}
+    "My Inventory": {"stone_pickaxe": 1, "diamond": 2, "raw_copper": 2}
+    "Updated final task": {"raw_copper": 1}
+    "Items Needed": {"stone_pickaxe": 1}
+    "Items Missing": {}
+}
+
+REASON:
+To understand this output line by line: the final task is to get 3 raw copper. I have 1 stone pickaxe, 2 diamonds and 2 raw copper in my inventory, so we update the final task to get 1 raw_copper. To obtain raw_copper, we need to mine copper_ore with a pickaxe. A stone_pickaxe or a better one can be used to mine copper_ore. Considering the cost, we choose the cheapest tool capable of mining copper_ore — the stone_pickaxe, this is the "Items Needed". Attention, no further decomposition! The "Items Missing" is empty as we already have a stone_pickaxe in the inventory.
+
+INPUT:
+Final Task: Get 2 iron_ingot.
+Inventory (2/36): {"stone_pickaxe": 1, "raw_gold": 2}
+
+RESPONSE:
+{
+    "Original final task": {"iron_ingot": 2}
+    "My Inventory": {"stone_pickaxe": 1, "raw_gold": 2}
+    "Updated final task": {"iron_ingot": 2}
+    "Items Needed": {"raw_iron": 2, "coal": 2}
+    "Items Missing": {"raw_iron": 2, "coal": 2}
+}
+
+REASON:
+To understand this output line by line: the final task is to get 2 iron ingots. I have 1 stone pickaxe and 2 raw gold in my inventory, we don't have any iron ingot in my inventory, so the final task remains unchanged. To obtain 2 iron ingots, we need to 2 raw iron, 2 coals and 1 furnace. But we don't need to list furnace or crafting table in "Items Needed". Attention, no further decomposition! These materials have not appeared in the backpack, therefore, these are the items we are missing.

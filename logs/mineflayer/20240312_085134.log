@@ -1,0 +1,64 @@
+2024-03-12 08:51:38,898 - mineflayer - INFO - Stopping subprocess.
+2024-03-12 08:51:39,911 - mineflayer - INFO - Starting subprocess with commands: ['node', 'E:\\pythonFiles\\LLM4MC\\llm4mc\\env\\mineflayer/index.js', '3000']
+2024-03-12 08:51:46,212 - mineflayer - INFO - Server started on port 3000
+2024-03-12 08:51:46,213 - mineflayer - INFO - Subprocess is ready.
+2024-03-12 08:51:46,306 - mineflayer - INFO - {
+2024-03-12 08:51:46,307 - mineflayer - INFO - port: 50838,
+2024-03-12 08:51:46,307 - mineflayer - INFO - reset: 'soft',
+2024-03-12 08:51:46,307 - mineflayer - INFO - inventory: {},
+2024-03-12 08:51:46,308 - mineflayer - INFO - equipment: [],
+2024-03-12 08:51:46,308 - mineflayer - INFO - spread: false,
+2024-03-12 08:51:46,308 - mineflayer - INFO - waitTicks: 40,
+2024-03-12 08:51:46,309 - mineflayer - INFO - position: null
+2024-03-12 08:51:46,309 - mineflayer - INFO - }
+2024-03-12 08:51:57,865 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:52:02,849 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:52:10,894 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:52:30,562 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:52:54,063 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:53:07,241 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:53:13,044 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:53:27,239 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:53:48,860 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:54:10,467 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:54:24,720 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:54:45,013 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:54:58,268 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:55:10,347 - mineflayer - INFO - Stopping subprocess.
+2024-03-12 08:55:10,383 - mineflayer - INFO - Stopping subprocess.
+2024-03-12 08:55:11,387 - mineflayer - INFO - Starting subprocess with commands: ['node', 'E:\\pythonFiles\\LLM4MC\\llm4mc\\env\\mineflayer/index.js', '3000']
+2024-03-12 08:55:12,772 - mineflayer - INFO - Server started on port 3000
+2024-03-12 08:55:12,772 - mineflayer - INFO - Subprocess is ready.
+2024-03-12 08:55:12,804 - mineflayer - INFO - {
+2024-03-12 08:55:12,804 - mineflayer - INFO - port: 50838,
+2024-03-12 08:55:12,804 - mineflayer - INFO - reset: 'soft',
+2024-03-12 08:55:12,804 - mineflayer - INFO - inventory: {},
+2024-03-12 08:55:12,804 - mineflayer - INFO - equipment: [],
+2024-03-12 08:55:12,804 - mineflayer - INFO - spread: false,
+2024-03-12 08:55:12,804 - mineflayer - INFO - waitTicks: 40,
+2024-03-12 08:55:12,804 - mineflayer - INFO - position: null
+2024-03-12 08:55:12,804 - mineflayer - INFO - }
+2024-03-12 08:55:18,307 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:55:24,221 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:55:32,244 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:55:53,370 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:56:13,088 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:56:34,470 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:56:54,332 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:57:05,994 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:57:11,805 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:57:26,342 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:57:46,362 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:58:06,641 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:58:20,663 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:58:41,866 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:58:54,413 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:59:14,963 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:59:34,313 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:59:45,621 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 08:59:51,277 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 09:00:03,026 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 09:00:26,408 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 09:00:50,219 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 09:01:03,696 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.
+2024-03-12 09:01:25,539 - mineflayer - INFO - Mineflayer detected that you are using a deprecated event (physicTick)! Please use this event (physicsTick) instead.

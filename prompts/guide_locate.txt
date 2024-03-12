@@ -1,0 +1,73 @@
+I am playing Minecraft. You are a game assistant familiar with the most likely locations of all blocks in Minecraft (such as ores, vegetation, etc.). I am looking for some items, and I will tell you about the environment I am in, my current location coordinates (X, Y, Z), and the name of the item I am looking for. Please tell me if there's something in the environment that I need.
+1) If so, please tell me what it is.
+2) If not, please compare the most likely location height H of the target item in Minecraft with my current location coordinates (X, Y, Z), and provide me with as accurate a direction as possible for searching. The direction should be represented by a triplet (A, B, C), where the values can only be -1, 0, or 1, and they cannot all be 0 at the same time. A, B, C represent the direction of change for X, Y, Z, respectively: a value of -1 indicates a decreasing direction, a value of 1 indicates an increasing direction, and a value of 0 means staying the same. You should first compare the difference between H and Y, and if there is a significant difference between H and Y, you can try to change the direction of Y to bring me closer to the most likely height of the item; if the difference between H and Y is not significant, you can try to change the direction of X, Z for horizontal exploration at this height, until the item is found.
+
+To help you achieve better results, I can inform you about the most likely altitudes for certain items. For the rest of the items, please make judgments based on your knowledge of block distribution in Minecraft. Coal ore is one of the most common ores and can be found in large quantities from the world surface down to bedrock level; Copper ore generates more frequently between Y-levels 47 and 48; Iron ore is typically found between Y-levels -24 and 56, with a higher concentration around Y-level 16; Lapis Lazuli ore is typically found between Y-levels 0 and 32, with a higher concentration around Y-level 19; Gold ore is most commonly found in the lower 32 layers of the map, its highest concentration is around Y-level -16 in the badlands biome; Redstone ore is typically found in the bottom 16 layers of the map, with a higher concentration around Y-level -64; Diamond ore is most commonly found between Y-levels -64 and -16, with the highest concentration around Y-level -59; Emerald ore is unique because it only spawns in mountain biomes and is most commonly found between Y-levels 4 and 31. Unlike other ores, emerald ore spawns in single blocks rather than veins.
+
+Please tell me the results in JSON format as described below:
+{
+    "Found": item_name or "None"
+    "Not found": "None" or direction
+}
+
+Before you submit your answer, please make sure:
+1) Ensure the response can be pshowrsed by Python `json.loads`, e.g.: no trailing commas, no single quotes, etc.
+2) Output the answer according to the format of the following example.
+
+Here are some examples:
+
+INPUT:
+Environment: ['oak_leaves', 'oak_log', 'grass_block', 'grass', 'dirt', 'fern']
+Position: (4.19, 72.0, 10.893)
+Goals: log
+
+RESPONSE:
+{
+    "Found": "oak_log"
+    "Not found": "None"
+}
+
+REASON:
+To understand this output line by line: I am looking for some logs, and some oak_logs are nearby, that's exactly what I need.
+
+INPUT:
+Environment: ['stone', 'water', 'dirt', 'copper_ore', 'diorite', 'coal_ore', 'gravel', 'salmon']
+Position: (2.463496588941251, 48, 36.69866834562903)
+Goals: iron_ore
+
+RESPONSE:
+{
+    "Found": "None"
+    "Not found": "(0, -1, 0)"
+}
+
+REASON:
+To understand this output line by line: I am looking for some iron ores, and there is no iron ore in current environment. My current position is (2.463496588941251, 48, 36.69866834562903), choose direction (0, -1, 0) because iron ore is distributed in the height range of 56 to -24, with the most likely occurrence at height 16.
+
+INPUT:
+Environment: ['deepslate', 'tuff', 'deepslate_redstone_ore', 'gravel']
+Position: (6.499999989142812, -58, 33.51713548144362)
+Goals: diamond
+
+RESPONSE:
+{
+    "Found": "None"
+    "Not found": "(1, 0, 0)"
+}
+
+REASON:
+To understand this output line by line: I am looking for some diamonds, and there is no diamond ore in current environment. My current position is (6.499999989142812, -58, 33.51713548144362), choose direction (1, 0, 0) ((0, 0, 1) is also ok) because diamond ore is distributed in the height range of 14 to -64, with the most likely occurrence at height -59. We are close enough to this height, so we may focus on changing the 'X' or 'Z' direction.
+
+INPUT:
+Environment: ['stone', 'gravel', 'dirt', 'grass_block', 'coal_ore', 'orange_tulip', 'copper_ore', 'poppy', 'grass', 'dandelion']
+Position: (231.5, 70, 104.5)
+Goals: log
+
+RESPONSE:
+{
+    "Found": "None",
+    "Not found": "(0, 0, 1)"
+}
+
+REASON:
+To understand this output line by line: I am looking for logs, which are typically part of trees found at ground level in various biomes. Given my current environment includes grass blocks, grass, and flowers like orange tulip, poppy, and dandelion, it indicates that I am likely on the surface or near a biome where trees could be found. So we choose a horizontal exploration while maintaining the current altitude, which is suitable for finding trees.
